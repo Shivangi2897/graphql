@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 
-
 function usePrevious(value) {
   const ref = useRef();
   useEffect(() => {
@@ -12,12 +11,9 @@ function usePrevious(value) {
 export default function Todo(props) {
   const [isEditing, setEditing] = useState(false);
   const [newName, setNewName] = useState('');
-
   const editFieldRef = useRef(null);
   const editButtonRef = useRef(null);
-
   const wasEditing = usePrevious(isEditing);
-
   function handleChange(e) {
     setNewName(e.target.value);
   }
